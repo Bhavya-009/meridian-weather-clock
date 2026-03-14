@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meridian: Real-time Weather</title>
+
+    <!-- Connecting to Google API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            <div class="logo-text">
+                <div class="name">Meridian</div>
+                <div class="subname">Real-time Weather</div>
+            </div>
+        </div>
+
+        <!-- TIME -->
+
+        <div class="time-clocks">
+            <div class="clock">
+                <div class="clock-time" id="local-time">--:--</div>
+                <div class="clock-label">Mumbai</div>
+            </div>
+            <div class="clock-divider">|</div>
+            <div class="clock">
+                <div class="clock-time" id="global-time">--:--</div>
+                <div class="clock-label" id="global-city">London</div>
+            </div>
+        </div>
+        
+        <!-- SEARCH -->
+
+        <div class="search-bar-container">
+            <input class="search-bar" id="search-input" placeholder="Search a city…" autocomplete="off" />
+            <button class="search-button" id="search-btn"></button>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-box">
+        <div class="weather-container">
+
+            <!-- LEFT UP Main: Current Weather -->
+            <section class="current-weather">
+
+                <div class="city-row">
+                    <div>
+                        <div class="city-name" id="city-name">Mumbai</div>
+                        <div class="city-date" id="city-date">--</div>
+                    </div>
+                    <div class="weather-icon-wrap">
+                        <div class="weather-icon" id="weather-icon">☀️</div>
+                    </div>
+                </div>
+                
+                <!-- TEMPERATURE -->
+                <div class="temperature-row">
+                    <div class="temperature" id="temperature">28°</div>
+                    <div class="temp-meta">
+                        <div class="condition" id="condition">Clear sky</div>
+                        <div class="feels-like" id="feels-like">Feels like 31°</div>
+                        <div class="hi-lo" id="hi-lo">H: 32° L: 24°</div>
+                    </div>
+                </div>
+                
+                <!--LEFT DOWN: METRICS -->
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon">🌧</div>
+                        <div class="metric-value" id="rain">—</div>
+                        <div class="metric-label">Rain</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">💧</div>
+                        <div class="metric-value" id="humidity">—</div>
+                        <div class="metric-label">Humidity</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🌬</div>
+                        <div class="metric-value" id="air">—</div>
+                        <div class="metric-label">Wind</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">👁</div>
+                        <div class="metric-value" id="visibility">—</div>
+                        <div class="metric-label">Visibility</div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- DIVIDER -->
+            <div class="panel-divider"></div>
+
+            <!-- RIGHT UP: Forecast -->
+            <aside class="forecast">
+                <div class="forecast-header">7-Day Forecast</div>
+                <div class="forecast-list" id="forecast-list">
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                    <div class="forecast-item skeleton">
+                        <span class="f-day">—</span>
+                        <span class="f-icon">—</span>
+                        <span class="f-range">— / —</span>
+                    </div>
+                </div>
+                
+                <!-- RIGTH DOWN: UV & Sunrise/Sunset -->
+                <div class="forecast-footer">
+                    <div class="sunrise-row">
+                        <span>🌅 <span id="sunrise"></span></span>
+                        <span>🌇 <span id="sunset"></span></span>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
