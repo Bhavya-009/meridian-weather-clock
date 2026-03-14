@@ -119,7 +119,7 @@ https://geocoding-api.open-meteo.com/v1/search
  
 ---
  
-## 🙏 Credits
+## Sources
  
 - Weather data by [Open-Meteo](https://open-meteo.com/)
 - Fonts by [Google Fonts](https://fonts.google.com/)
